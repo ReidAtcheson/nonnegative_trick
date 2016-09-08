@@ -28,7 +28,7 @@ function nonnegative_trick(A,b)
   z[1:n]=b;
 
 
-  return B;
+  return (B,z);
 
 end
 
@@ -40,7 +40,7 @@ b=rand(5);
 
 
 
-B=nonnegative_trick(A);
-println(eigvals(A));
+(B,c)=nonnegative_trick(A,b);
+println(A);
 println();
-println(eigvals(B));
+println(B);
