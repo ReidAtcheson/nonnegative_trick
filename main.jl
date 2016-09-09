@@ -28,20 +28,4 @@ end
 
 
 
-#A=diagm(-ones(4),-1) + diagm(2*ones(5)) + diagm(-ones(4),1);
-A=rand(5,5)-rand(5,5);
-b=rand(5);
 
-#A = 
-#hcat(
-#  [2.0, -2.0, 2.0],
-#  [2.0,  2.0,-2.0],
-#  [2.0,  2.0, 2.0])';
-#
-#b=rand(3);
-
-(B,c)=nonnegative_trick(A,b);
-println(A\b);
-println();
-println(B\c);
-println();
