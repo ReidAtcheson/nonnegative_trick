@@ -7,9 +7,7 @@ function nonnegative_trick(A,b)
       m=m+1;
     end
   end
-
   B=zeros(m,m);
-
   k=n+1;
   for i=1:n
     for j=1:n
@@ -17,19 +15,15 @@ function nonnegative_trick(A,b)
       if A[i,j]<0
         B[i,j]=0.0;
         B[i,k]=abs(A[i,j]);
-        B[k,i]=1.0;
+        B[k,j]=1.0;
         B[k,k]=1.0;
         k=k+1;
       end
     end
   end
-
   z=zeros(m);
   z[1:n]=b;
-
-
   return (B,z);
-
 end
 
 
@@ -38,9 +32,16 @@ end
 A=rand(5,5)-rand(5,5);
 b=rand(5);
 
-
+#A = 
+#hcat(
+#  [2.0, -2.0, 2.0],
+#  [2.0,  2.0,-2.0],
+#  [2.0,  2.0, 2.0])';
+#
+#b=rand(3);
 
 (B,c)=nonnegative_trick(A,b);
-println(A);
+println(A\b);
 println();
-println(B);
+println(B\c);
+println();
